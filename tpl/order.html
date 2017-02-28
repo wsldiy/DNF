@@ -1,0 +1,48 @@
+<div ng-include="'tpl/include/header.html'"></div>
+
+<div class="container">
+  <form ng-hide="succMsg || errMsg">
+    <!-- 收货人-->
+    <div class="form-group">
+      <label for="name">游客ID</label>
+      <input ng-model='order.user_name' type="text" id="name" class="form-control"/>
+    </div>
+
+    <!-- 性别-->
+    <div class="form-group">
+      <label>性别</label>
+      <div class="radio-inline">
+        <label>
+          <input ng-model="order.sex" type="radio" name="sex" value="1"/> 先生
+        </label>
+      </div>
+
+      <div class="radio-inline">
+        <label>
+          <input ng-model="order.sex"type="radio" name="sex" value="2"/> 女士
+        </label>
+      </div>
+    </div>
+
+    <!-- 账号-->
+    <div class="form-group">
+      <label for="word">留言</label>
+      <textarea ng-model="order.word" id="word"  class="form-control"></textarea>
+    </div>
+
+    <!-- 手机号-->
+    <div class="form-group">
+      <label for="num">游客账号</label>
+      <input ng-model="order.num" type="text" id="num" class="form-control"/>
+    </div>
+    <br/>
+    <input type="button" ng-click="submitOrder()" class="btn btn-success btn-block" value="提交"/>
+  </form>
+
+  <p ng-show="succMsg">{{succMsg}}</p>
+  <p ng-show="errMsg">{{errMsg}}</p>
+
+</div>
+
+
+<div ng-include="'tpl/include/footer.html'"></div>

@@ -1,0 +1,37 @@
+
+<div ng-include="'tpl/include/header.html'"></div>
+
+<div class="container">
+  <!-- 指定面包屑-->
+  <ul class="breadcrumb">
+    <li>
+      <a href="#/start">首页</a>
+    </li>
+    <li>详情</li>
+  </ul>
+
+  <!-- 具体详情-->
+  <div class="panel panel-default">
+
+    <div class="panel-body">
+       <h3>{{dnf.name}}</h3>
+      <img ng-src="img/{{dnf.img_lg}}"
+           class="img-responsive
+      " alt=""/>
+
+      <p>{{dnf.keyword}}</p>
+      <p>{{dnf.introduct}}</p>
+    </div>
+
+    <div class="panel-footer">
+      <div class="text-right">
+        <button ng-click="jump('/order/'+dnf.did)" class="btn btn-primary">发布留言</button>
+        <button ng-click="jump('/main')" class="btn btn-success">继续浏览</button>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div ng-include="'tpl/include/footer.html'"></div>

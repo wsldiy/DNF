@@ -1,0 +1,51 @@
+
+<div ng-include="'tpl/include/header.html'"></div>
+<div class="container">
+  <!-- 搜索框-->
+  <div class="form-group has-feedback search">
+    <input ng-model='kw' class="form-control" type="text" placeholder="请输入职业名称或关键字"/>
+    <span class="form-control-feedback glyphicon glyphicon-search"></span>
+  </div>
+  <button ng-show='hasMore' ng-click="gjs()" class="btn btn-lg s-button">
+    鬼剑士
+  </button>
+  <button ng-show='hasMore' ng-click="sqs()" class="btn btn-lg s-button">
+    神枪手
+  </button>
+  <button ng-show='hasMore' ng-click="gdj()" class="btn btn-lg s-button">
+    格斗家
+  </button>
+  <button ng-show='hasMore' ng-click="mfs()" class="btn btn-lg s-button">
+    魔法师
+  </button>
+  <button ng-show='hasMore' ng-click="szz()" class="btn btn-lg s-button">
+    圣职者
+  </button>
+  <!-- 列表-->
+  <div class="list-group">
+    <a href="#/detail/{{dnf.did}}" class="list-group-item" ng-repeat="dnf in dnfList">
+      <div class="media">
+        <div class="media-left media-middle">
+          <img class="media-object" ng-src="img/{{dnf.img_sm}}" alt=""/>
+        </div>
+
+        <div class="media-body">
+          <h1>{{dnf.name}}</h1>
+          <p>{{dnf.keyword}}</p>
+          <hr/>
+          <p>{{dnf.talk}}</p>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- 加载更多的按钮-->
+  <button ng-show='hasMore' ng-click="loadMore()" class="btn btn-block s-button">
+    MORE PROFESSION
+  </button>
+
+  <!-- 提示：没有更多数据可以加载了-->
+  <p class="alert alert-warning" ng-hide="hasMore">NO MORE</p>
+</div>
+
+<div ng-include="'tpl/include/footer.html'"></div>
